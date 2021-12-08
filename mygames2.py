@@ -16,12 +16,12 @@ def cho_han(bet, choice):
   else:
     answer = "odd"
   if choice == answer:
-    print(f"Wow! you did it! it was {answer}! You won ${bet}!")
+    print(f"Wow! you did it! it was {answer}! You won ${bet}!\n")
     return total_money + bet
   else:
-    print(f"Awwww man, it was {answer}, maybe next time you wont lose ${bet}...")
+    print(f"Awwww man, it was {answer}, maybe next time you wont lose ${bet}...\n")
     return total_money - bet
-    
+
 
 
 
@@ -33,11 +33,11 @@ def heads_or_tails(bet, choice):
   else:
     num = "tails"
   if choice == num:
-    print("Congratulations! it was {0}! you have won ${1}!".format(choice,bet))
+    print("Congratulations! it was {0}! you have won ${1}!\n".format(choice,bet))
     return total_money + bet
   elif choice != num:
-    
-    print("Awwww man, it was {0}, maybe next time you won't lose ${1}..".format(num, bet))
+
+    print("Awwww man, it was {0}, maybe next time you won't lose ${1}..\n".format(num, bet))
     return total_money - bet
 
 def cards(bet,name):
@@ -50,16 +50,16 @@ def cards(bet,name):
   card2 = cardlist[num2]
   print(f"House has a {card2}.")
   if card1 > card2:
-    
-    print(f"Congratulations! You won ${bet}!")
+
+    print(f"Congratulations! You won ${bet}!\n")
     return total_money + bet
   elif card2 > card1:
-    
-    print(f"Awwww man, you lost.. maybe next time you wont lose ${bet}..")
+
+    print(f"Awwww man, you lost.. maybe next time you wont lose ${bet}..\n")
     return total_money - bet
   else:
     return total_money
-    print(f"It's a tie! replace your bets!")
+    print(f"It's a tie! replace your bets!\n")
 
 def roulette(number, numbet, color, colbet, pick, pickbet):
   print(f"Let's go! you bet ${numbet} it will be {number}, ${colbet} it will be {color}, and ${pickbet} it will be {pick}! good luck!")
@@ -79,7 +79,7 @@ def roulette(number, numbet, color, colbet, pick, pickbet):
   elif num == number:
     print(f"Wow! thats a hit! you won ${numbet *35} on your {number}!")
     numwin += numbet * 35
-  elif num != number: 
+  elif num != number:
     print(f"Aww man, missed out on that {number}, it was a {num}, maybe next time! You lose ${numbet} on that one")
     numwin -= numbet
   if num % 2 == 0 and num != 37:
@@ -94,31 +94,31 @@ def roulette(number, numbet, color, colbet, pick, pickbet):
   elif col == color and col == "green":
     print(f"Holy moly it was green! you won ${colbet} for that crazy pick!")
     colwin += colbet
-  else: 
+  else:
     print(f"Aww man, you guess wrong on the color! it was {col}, you lost ${colbet} on that one!")
     colwin -= colbet
   if pick == odev:
     print(f"You did it! it was {odev}! You won ${pickbet} on your {pick} choice!")
     pickwin += pickbet
-  else: 
+  else:
     print(f"Aww man, it was {odev}, you picked {pick}. You lost ${pickbet} on that one!")
     pickwin -= pickbet
   total = pickwin + numwin + colwin
   if total > 0:
-    print(f"You did it! your total winnings are ${total}!")
+    print(f"You did it! your total winnings are ${total}!\n")
   else:
-    print(f"Better luck next time, you lost ${total} on all your bets")
+    print(f"Better luck next time, you lost ${total} on all your bets\n")
   return total
 
 print("Let's play Roulette!")
 total_money = roulette(11, 20, "black", 25, "odd", 15)
-print(f"You now have ${total_money} after Roulette!")
+print(f"You now have ${total_money} after Roulette!\n")
 print("Let's play Cho Han!")
 total_money = cho_han(50, "even")
-print(f"You now have ${total_money} after Roulette and one game of Cho Han!")
+print(f"You now have ${total_money} after Roulette and one game of Cho Han!\n")
 print("Let's play Heads or Tails!")
 total_money = heads_or_tails(50, "heads")
-print(f"You now have ${total_money} after Roulette, Cho Han and Heads or Tails!")
+print(f"You now have ${total_money} after Roulette, Cho Han and Heads or Tails!\n")
 print("Now, lets play cards!")
 total_money = cards(50, "Jeff")
 print(f"You now have ${total_money} after all four games!")
